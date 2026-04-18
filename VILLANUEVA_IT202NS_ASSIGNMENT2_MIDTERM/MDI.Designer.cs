@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIProductivityDashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyPlannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.habitTrackerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.focusTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,22 +65,14 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashBoardToolStripMenuItem,
             this.dailyPlannerToolStripMenuItem,
             this.habitTrackerToolStripMenuItem,
             this.focusTimerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.fileToolStripMenuItem.Text = "Files";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.fileToolStripMenuItem.Text = "DashBoard";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
-            // 
-            // dashBoardToolStripMenuItem
-            // 
-            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
-            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dashBoardToolStripMenuItem.Text = "DashBoard";
-            this.dashBoardToolStripMenuItem.Click += new System.EventHandler(this.dashBoardToolStripMenuItem_Click);
             // 
             // dailyPlannerToolStripMenuItem
             // 
@@ -126,35 +117,35 @@
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.tileVerticalToolStripMenuItem_Click);
             // 
             // heToolStripMenuItem
             // 
             this.heToolStripMenuItem.Name = "heToolStripMenuItem";
-            this.heToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.heToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.heToolStripMenuItem.Text = "Help";
             this.heToolStripMenuItem.Click += new System.EventHandler(this.heToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -248,7 +239,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyPlannerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem habitTrackerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem focusTimerToolStripMenuItem;

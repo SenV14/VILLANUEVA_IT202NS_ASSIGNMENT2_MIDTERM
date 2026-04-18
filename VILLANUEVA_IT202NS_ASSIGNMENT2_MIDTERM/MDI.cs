@@ -35,9 +35,26 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
 
         private void heToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            About_Form aboutForm = new About_Form();
-            aboutForm.MdiParent = this;
-            aboutForm.Show();
+            
+            try
+            {
+                About_Form aboutForm = this.MdiChildren.OfType<About_Form>().FirstOrDefault();
+                if (aboutForm != null)
+                {         
+                    aboutForm.Focus(); 
+                }
+                else
+                {
+                    aboutForm = new About_Form();
+                    aboutForm.MdiParent = this;
+                    aboutForm.Show();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while trying to open the About form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,59 +76,47 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
         {
             try
             {
-                if (About_Form.ActiveForm != null)
+                About_Form aboutForm = this.MdiChildren.OfType<About_Form>().FirstOrDefault();
+                if (aboutForm != null)
                 {
-                    MessageBox.Show("The About form is already open. Please close the existing form before opening a new one.", "Form Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    aboutForm.Focus();
                 }
                 else
                 {
-
-                    About_Form aboutForm = new About_Form();
+                    aboutForm= new About_Form();
                     aboutForm.MdiParent = this;
                     aboutForm.Show();
-                }
-            }
-            catch(Exception ex)  
-            {
-                MessageBox.Show("An error occurred while trying to open the About form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MDIProductivityDashboard.ActiveForm != null)
-                {
-                    MessageBox.Show("A dashboard is already open. Please close the existing dashboard before opening a new one.", "Dashboard Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MDIProductivityDashboard dashboardForm = new MDIProductivityDashboard();
-                    dashboardForm.MdiParent = this;
-                    dashboardForm.Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to open the dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while trying to open the About form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                            
+        
         }
+
+        private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          //           
+        }//
 
         private void dailyPlannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try 
             {
-                if(dailyPlannerToolStripMenuItem != null)
+                DailyPlannerForm dailyPlannerForm = this.MdiChildren.OfType<DailyPlannerForm>().FirstOrDefault();
+                if (dailyPlannerForm != null)
                 {
-                    MessageBox.Show("A Daily Planner is already open. Please close the existing Daily Planner before opening a new one.", "Daily Planner Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    DailyPlannerForm.ActiveForm.Focus();
                 }
                 else
                 {
-                    DailyPlannerForm dailyPlannerForm = new DailyPlannerForm();
+                    dailyPlannerForm = new DailyPlannerForm();
                     dailyPlannerForm.MdiParent = this;
                     dailyPlannerForm.Show();
+                    
                 }
             }
             catch (Exception ex)
@@ -122,18 +127,20 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
 
         private void habitTrackerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                if(HabitTrackerForm.ActiveForm != null)
+                HabitTrackerForm habitTrackerForm = this.MdiChildren.OfType<HabitTrackerForm>().FirstOrDefault();
+                if (habitTrackerForm != null)
                 {
-                    MessageBox.Show("A Habit Tracker is already open. Please close the existing Habit Tracker before opening a new one.", "Habit Tracker Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    habitTrackerForm.Focus();
                 }
                 else
                 {
-                    HabitTrackerForm habitTrackerForm = new HabitTrackerForm();
+                    habitTrackerForm = new HabitTrackerForm();
+                    habitTrackerForm.MdiParent = this;
                     habitTrackerForm.Show();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -168,35 +175,43 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
         {
             try
             {
-                if (MDIProductivityDashboard.ActiveForm != null)
+                DailyPlannerForm dailyPlannerForm = this.MdiChildren.OfType<DailyPlannerForm>().FirstOrDefault();
+                if (dailyPlannerForm != null)
                 {
-                    MessageBox.Show("A dashboard is already open. Please close the existing dashboard before opening a new one.", "Dashboard Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DailyPlannerForm.ActiveForm.Focus();
                 }
                 else
                 {
-                    MDIProductivityDashboard dashboardForm = new MDIProductivityDashboard();
-                    dashboardForm.Show();
+                    dailyPlannerForm = new DailyPlannerForm();
+                    dailyPlannerForm.MdiParent = this;
+                    dailyPlannerForm.Show();
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to open the dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while trying to open the Daily Planner: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dailyPlannerToolStripMenuItem != null)
+                DailyPlannerForm dailyPlannerForm = this.MdiChildren.OfType<DailyPlannerForm>().FirstOrDefault();
+                if (dailyPlannerForm != null)
                 {
-                    MessageBox.Show("A Daily Planner is already open. Please close the existing Daily Planner before opening a new one.", "Daily Planner Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DailyPlannerForm.ActiveForm.Focus();
                 }
                 else
                 {
-                    DailyPlannerForm dailyPlannerForm = new DailyPlannerForm();
+                    dailyPlannerForm = new DailyPlannerForm();
                     dailyPlannerForm.MdiParent = this;
                     dailyPlannerForm.Show();
+
                 }
             }
             catch (Exception ex)
@@ -209,13 +224,15 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
         {
             try
             {
-                if (HabitTrackerForm.ActiveForm != null)
+                HabitTrackerForm habitTrackerForm = this.MdiChildren.OfType<HabitTrackerForm>().FirstOrDefault();
+                if (habitTrackerForm != null)
                 {
-                    MessageBox.Show("A Habit Tracker is already open. Please close the existing Habit Tracker before opening a new one.", "Habit Tracker Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    habitTrackerForm.Focus();
                 }
                 else
                 {
-                    HabitTrackerForm habitTrackerForm = new HabitTrackerForm();
+                    habitTrackerForm = new HabitTrackerForm();
+                    habitTrackerForm.MdiParent = this;
                     habitTrackerForm.Show();
                 }
 
@@ -228,23 +245,24 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                if (Notes.ActiveForm != null)
+                Notes notes = this.MdiChildren.OfType<Notes>().FirstOrDefault();
+                if (notes != null)
                 {
-                    MessageBox.Show("A Notes form is already open. Please close the existing Notes form before opening a new one.", "Notes Form Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    notes.Focus();
                 }
                 else
                 {
-                    Notes notes = new Notes();
+                    notes = new Notes();
                     notes.MdiParent = this;
                     notes.Show();
                 }
-                
+
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to open the Notes form.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while trying to open the Habit Tracker: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -252,20 +270,22 @@ namespace VILLANUEVA_IT202NS_ASSIGNMENT2_MIDTERM
         {
             try
             {
-                if (Focus_Timer_Form.ActiveForm != null)
+                Focus_Timer_Form timer = this.MdiChildren.OfType<Focus_Timer_Form>().FirstOrDefault();
+                if (timer != null)
                 {
-                    MessageBox.Show("A Focus Timer is already open. Please close the existing Focus Timer before opening a new one.", "Focus Timer Already Open", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    timer.Focus();
                 }
                 else
                 {
-                    Focus_Timer_Form focusTimerForm = new Focus_Timer_Form();
-                    focusTimerForm.MdiParent = this;
-                    focusTimerForm.Show();
+                    timer = new Focus_Timer_Form();
+                    timer.MdiParent = this;
+                    timer.Show();
                 }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to open the Focus Timer: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while trying to open the Habit Tracker: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
